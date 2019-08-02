@@ -15,7 +15,8 @@
           isError: this.isError,
           isDisabled: this.isDisabled,
           placeholder: this.placeholder,
-          filterPredicate: this.filterPredicate
+          filterPredicate: this.filterPredicate,
+          searchText: this.searchText,
         },
         on: {
           select: this.onSelect,
@@ -24,6 +25,9 @@
       })
     },
     props: {
+      searchText: {
+        type: String
+      },
       list: {
         type: Array
       },
