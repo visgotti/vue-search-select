@@ -10,7 +10,6 @@
            :id="id"
            :name="name"
            :value="searchText"
-           @input="searchText = $event.target.value"
            ref="input"
            @focus.prevent="openOptions"
            @keyup.esc="closeOptions"
@@ -54,12 +53,15 @@ export default {
     selectedOption: {
       type: Object,
       default: () => { return { value: '', text: '' } }
+    },
+    searchText: {
+      type: String,
+      default: '',
     }
   },
   data () {
     return {
       showMenu: false,
-      searchText: '',
       mousedownState: false, // mousedown on option menu
       pointer: -1
     }
